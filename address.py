@@ -1,7 +1,6 @@
 import re
-import unittest
 
-class Address(unittest.TestCase):
+class Address():
     def __init__(self, address_string):
         self.address_string = address_string
 
@@ -10,6 +9,7 @@ class Address(unittest.TestCase):
         hn_regex = r"^(?:\d+[a-zA-Z]?(?:[\s\\/,\\-]\d*[a-zA-Z]?)?)\s+(.*)$"
         # Regular expression to match the street name first format
         sn_regex = r"^(.*)\s+(?:\d+[a-zA-Z]?(?:[\s\\/,\\-]\d*[a-zA-Z]?)?)$"
+        
         # Check if the address matches the house number first format
         if re.match(hn_regex, self.address_string):
             pattern = r'^(\d+|\w+,*) (.*)$'
